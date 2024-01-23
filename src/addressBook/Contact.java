@@ -4,12 +4,14 @@
  */
 package addressBook;
 
+import java.io.Serializable;
+
 /**
  *
  * @author eoin0
  */
 
-public class Contact implements serializable{
+public class Contact implements Serializable{
     protected String firstname,lastname, phone, email, address;
 
     public Contact() {
