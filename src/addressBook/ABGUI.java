@@ -56,46 +56,55 @@ public class ABGUI extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(null);
+
+        firstnameTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         getContentPane().add(firstnameTF);
-        firstnameTF.setBounds(1640, 310, 234, 22);
+        firstnameTF.setBounds(1120, 220, 234, 38);
+
+        lastnameTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         getContentPane().add(lastnameTF);
-        lastnameTF.setBounds(1640, 390, 234, 22);
+        lastnameTF.setBounds(1120, 300, 234, 38);
+
+        phoneTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         getContentPane().add(phoneTF);
-        phoneTF.setBounds(1640, 480, 234, 22);
+        phoneTF.setBounds(1120, 390, 234, 38);
+
+        emailTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         getContentPane().add(emailTF);
-        emailTF.setBounds(1640, 560, 234, 22);
+        emailTF.setBounds(1120, 470, 234, 38);
 
         addressTA.setColumns(20);
+        addressTA.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addressTA.setRows(5);
         jScrollPane1.setViewportView(addressTA);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(1640, 660, 234, 86);
+        jScrollPane1.setBounds(1120, 570, 434, 166);
 
         firstnameLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         firstnameLBL.setText("Firstname");
         getContentPane().add(firstnameLBL);
-        firstnameLBL.setBounds(1530, 300, 104, 32);
+        firstnameLBL.setBounds(1010, 210, 104, 32);
 
         lastnameLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lastnameLBL.setText("Lastname");
         getContentPane().add(lastnameLBL);
-        lastnameLBL.setBounds(1530, 380, 101, 32);
+        lastnameLBL.setBounds(1010, 290, 101, 32);
 
         phoneLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         phoneLBL.setText("Phone");
         getContentPane().add(phoneLBL);
-        phoneLBL.setBounds(1550, 470, 68, 32);
+        phoneLBL.setBounds(1030, 380, 68, 32);
 
         emailLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         emailLBL.setText("Email");
         getContentPane().add(emailLBL);
-        emailLBL.setBounds(1550, 550, 57, 32);
+        emailLBL.setBounds(1030, 460, 57, 32);
 
         addressLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addressLBL.setText("Address");
         getContentPane().add(addressLBL);
-        addressLBL.setBounds(1540, 650, 90, 30);
+        addressLBL.setBounds(1020, 560, 90, 30);
 
         addBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addBTN.setText("Add");
@@ -128,11 +137,12 @@ public class ABGUI extends javax.swing.JFrame {
         exitBTN.setBounds(1020, 820, 140, 70);
 
         displayTA.setColumns(20);
+        displayTA.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         displayTA.setRows(5);
         jScrollPane2.setViewportView(displayTA);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(450, 210, 1060, 560);
+        jScrollPane2.setBounds(450, 210, 510, 560);
 
         clearBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         clearBTN.setText("Clear");
@@ -147,7 +157,7 @@ public class ABGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setText("Contact Keeper");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(800, 70, 370, 150);
+        jLabel1.setBounds(790, 30, 370, 150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
