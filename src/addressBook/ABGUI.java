@@ -55,56 +55,34 @@ public class ABGUI extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
-        getContentPane().setLayout(null);
 
         firstnameTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(firstnameTF);
-        firstnameTF.setBounds(1120, 220, 234, 38);
 
         lastnameTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(lastnameTF);
-        lastnameTF.setBounds(1120, 300, 234, 38);
 
         phoneTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(phoneTF);
-        phoneTF.setBounds(1120, 390, 234, 38);
 
         emailTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(emailTF);
-        emailTF.setBounds(1120, 470, 234, 38);
 
         addressTA.setColumns(20);
         addressTA.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addressTA.setRows(5);
         jScrollPane1.setViewportView(addressTA);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(1120, 570, 434, 166);
-
         firstnameLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         firstnameLBL.setText("Firstname");
-        getContentPane().add(firstnameLBL);
-        firstnameLBL.setBounds(1010, 210, 104, 32);
 
         lastnameLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lastnameLBL.setText("Lastname");
-        getContentPane().add(lastnameLBL);
-        lastnameLBL.setBounds(1010, 290, 101, 32);
 
         phoneLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         phoneLBL.setText("Phone");
-        getContentPane().add(phoneLBL);
-        phoneLBL.setBounds(1030, 380, 68, 32);
 
         emailLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         emailLBL.setText("Email");
-        getContentPane().add(emailLBL);
-        emailLBL.setBounds(1030, 460, 57, 32);
 
         addressLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addressLBL.setText("Address");
-        getContentPane().add(addressLBL);
-        addressLBL.setBounds(1020, 560, 90, 30);
 
         addBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addBTN.setText("Add");
@@ -113,8 +91,6 @@ public class ABGUI extends javax.swing.JFrame {
                 addBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(addBTN);
-        addBTN.setBounds(740, 820, 140, 70);
 
         displayBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         displayBTN.setText("Display");
@@ -123,8 +99,6 @@ public class ABGUI extends javax.swing.JFrame {
                 displayBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(displayBTN);
-        displayBTN.setBounds(880, 820, 140, 70);
 
         exitBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         exitBTN.setText("Exit");
@@ -133,16 +107,11 @@ public class ABGUI extends javax.swing.JFrame {
                 exitBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(exitBTN);
-        exitBTN.setBounds(1020, 820, 140, 70);
 
         displayTA.setColumns(20);
         displayTA.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         displayTA.setRows(5);
         jScrollPane2.setViewportView(displayTA);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(450, 210, 510, 560);
 
         clearBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         clearBTN.setText("Clear");
@@ -151,13 +120,85 @@ public class ABGUI extends javax.swing.JFrame {
                 clearBTNActionPerformed(evt);
             }
         });
-        getContentPane().add(clearBTN);
-        clearBTN.setBounds(1160, 820, 140, 70);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 50)); // NOI18N
         jLabel1.setText("Contact Keeper");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(790, 30, 370, 150);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(459, 459, 459)
+                .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(150, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(emailLBL)
+                    .addComponent(addressLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(firstnameLBL)
+                    .addComponent(lastnameLBL)
+                    .addComponent(phoneLBL))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(firstnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lastnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(150, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(firstnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(firstnameLBL))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(lastnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lastnameLBL))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phoneLBL))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(emailLBL)
+                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(addressLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
