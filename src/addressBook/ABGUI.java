@@ -47,119 +47,107 @@ public class ABGUI extends javax.swing.JFrame {
         exitBTN = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         displayTA = new javax.swing.JTextArea();
+        clearBTN = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
+        getContentPane().setLayout(null);
+        getContentPane().add(firstnameTF);
+        firstnameTF.setBounds(1640, 310, 234, 22);
+        getContentPane().add(lastnameTF);
+        lastnameTF.setBounds(1640, 390, 234, 22);
+        getContentPane().add(phoneTF);
+        phoneTF.setBounds(1640, 480, 234, 22);
+        getContentPane().add(emailTF);
+        emailTF.setBounds(1640, 560, 234, 22);
 
         addressTA.setColumns(20);
         addressTA.setRows(5);
         jScrollPane1.setViewportView(addressTA);
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(1640, 660, 234, 86);
+
+        firstnameLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         firstnameLBL.setText("Firstname");
+        getContentPane().add(firstnameLBL);
+        firstnameLBL.setBounds(1530, 300, 104, 32);
 
+        lastnameLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lastnameLBL.setText("Lastname");
+        getContentPane().add(lastnameLBL);
+        lastnameLBL.setBounds(1530, 380, 101, 32);
 
+        phoneLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         phoneLBL.setText("Phone");
+        getContentPane().add(phoneLBL);
+        phoneLBL.setBounds(1550, 470, 68, 32);
 
+        emailLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         emailLBL.setText("Email");
+        getContentPane().add(emailLBL);
+        emailLBL.setBounds(1550, 550, 57, 32);
 
+        addressLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addressLBL.setText("Address");
+        getContentPane().add(addressLBL);
+        addressLBL.setBounds(1540, 650, 90, 30);
 
+        addBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         addBTN.setText("Add");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(addBTN);
+        addBTN.setBounds(740, 820, 140, 70);
 
+        displayBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         displayBTN.setText("Display");
         displayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(displayBTN);
+        displayBTN.setBounds(880, 820, 140, 70);
 
+        exitBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         exitBTN.setText("Exit");
         exitBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitBTNActionPerformed(evt);
             }
         });
+        getContentPane().add(exitBTN);
+        exitBTN.setBounds(1020, 820, 140, 70);
 
         displayTA.setColumns(20);
         displayTA.setRows(5);
         jScrollPane2.setViewportView(displayTA);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(189, 189, 189)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstnameLBL, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lastnameLBL, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(phoneLBL, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(emailLBL, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(addressLBL, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addComponent(emailTF)
-                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lastnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(firstnameTF)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(addBTN)
-                        .addGap(67, 67, 67)
-                        .addComponent(displayBTN)
-                        .addGap(67, 67, 67)
-                        .addComponent(exitBTN)))
-                .addContainerGap(900, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(firstnameLBL))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lastnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lastnameLBL))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phoneLBL))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailLBL))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addressLBL))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBTN)
-                    .addComponent(displayBTN)
-                    .addComponent(exitBTN))
-                .addContainerGap())
-        );
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(450, 210, 1060, 560);
+
+        clearBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        clearBTN.setText("Clear");
+        clearBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(clearBTN);
+        clearBTN.setBounds(1160, 820, 140, 70);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel1.setText("Contact Keeper");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(800, 70, 370, 150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -208,6 +196,11 @@ public class ABGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_displayBTNActionPerformed
 
+    private void clearBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBTNActionPerformed
+        // TODO add your handling code here:
+        clear();
+    }//GEN-LAST:event_clearBTNActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,6 +240,7 @@ public class ABGUI extends javax.swing.JFrame {
     private javax.swing.JButton addBTN;
     private javax.swing.JLabel addressLBL;
     private javax.swing.JTextArea addressTA;
+    private javax.swing.JButton clearBTN;
     private javax.swing.JButton displayBTN;
     private javax.swing.JTextArea displayTA;
     private javax.swing.JLabel emailLBL;
@@ -254,6 +248,7 @@ public class ABGUI extends javax.swing.JFrame {
     private javax.swing.JButton exitBTN;
     private javax.swing.JLabel firstnameLBL;
     private javax.swing.JTextField firstnameTF;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lastnameLBL;
