@@ -4,8 +4,9 @@
  */
 package addressBook;
 
-import addressBook.Contact;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author eoin0
@@ -13,13 +14,17 @@ import java.util.ArrayList;
 public class ABGUI extends javax.swing.JFrame {
 
     ArrayList<Contact> clist;
+
     /**
      * Creates new form ABGUI
      */
     public ABGUI() {
         initComponents();
         clist = new ArrayList<>();
-        
+        compLBL.setVisible(false);
+        companyTF.setVisible(false);
+        standardRB.setSelected(true);
+
     }
 
     /**
@@ -31,6 +36,7 @@ public class ABGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        typeG = new javax.swing.ButtonGroup();
         firstnameTF = new javax.swing.JTextField();
         lastnameTF = new javax.swing.JTextField();
         phoneTF = new javax.swing.JTextField();
@@ -47,10 +53,17 @@ public class ABGUI extends javax.swing.JFrame {
         exitBTN = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         displayTA = new javax.swing.JTextArea();
-        clearBTN = new javax.swing.JButton();
+        resetBTN = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        businessRB = new javax.swing.JRadioButton();
+        standardRB = new javax.swing.JRadioButton();
+        compLBL = new javax.swing.JLabel();
+        companyTF = new javax.swing.JTextField();
+        searchBTN = new javax.swing.JButton();
+        deleteBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Contact Keeper");
         setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
@@ -109,57 +122,113 @@ public class ABGUI extends javax.swing.JFrame {
         });
 
         displayTA.setColumns(20);
-        displayTA.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        displayTA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         displayTA.setRows(5);
         jScrollPane2.setViewportView(displayTA);
 
-        clearBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        clearBTN.setText("Clear");
-        clearBTN.addActionListener(new java.awt.event.ActionListener() {
+        resetBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        resetBTN.setText("Reset");
+        resetBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearBTNActionPerformed(evt);
+                resetBTNActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 50)); // NOI18N
         jLabel1.setText("Contact Keeper");
 
+        typeG.add(businessRB);
+        businessRB.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        businessRB.setText("Business");
+        businessRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                businessRBActionPerformed(evt);
+            }
+        });
+
+        typeG.add(standardRB);
+        standardRB.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        standardRB.setText("Standard");
+        standardRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                standardRBActionPerformed(evt);
+            }
+        });
+
+        compLBL.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        compLBL.setText("Company");
+
+        companyTF.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        searchBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        searchBTN.setText("Search");
+        searchBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBTNActionPerformed(evt);
+            }
+        });
+
+        deleteBTN.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        deleteBTN.setText("Delete");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(459, 459, 459)
-                .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(150, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emailLBL)
-                    .addComponent(addressLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstnameLBL)
-                    .addComponent(lastnameLBL)
-                    .addComponent(phoneLBL))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(firstnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lastnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(150, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(390, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailLBL)
+                            .addComponent(firstnameLBL)
+                            .addComponent(lastnameLBL)
+                            .addComponent(phoneLBL)
+                            .addComponent(compLBL)
+                            .addComponent(addressLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(firstnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(standardRB))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lastnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(businessRB))
+                            .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(companyTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 689, Short.MAX_VALUE)
+                        .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0)
+                .addComponent(resetBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,32 +240,40 @@ public class ABGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(firstnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(firstnameLBL))
-                        .addGap(30, 30, 30)
+                            .addComponent(firstnameLBL)
+                            .addComponent(standardRB))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(lastnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lastnameLBL))
-                        .addGap(30, 30, 30)
+                            .addComponent(lastnameLBL)
+                            .addComponent(businessRB))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(phoneTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(phoneLBL))
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(emailLBL)
                             .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(compLBL)
+                            .addComponent(companyTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(addressLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)))
                     .addComponent(jScrollPane2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(exitBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(resetBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -205,30 +282,47 @@ public class ABGUI extends javax.swing.JFrame {
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
-        
-        Contact tempC = new Contact();
+        if (standardRB.isSelected()) {
 
-        tempC.firstname = firstnameTF.getText();
-        tempC.lastname = lastnameTF.getText();
-        tempC.phone = phoneTF.getText();
-        tempC.email = emailTF.getText();
-        tempC.address = addressTA.getText();
-        
-        displayTA.setText("Contact added");
-        clist.add(tempC);
-        clear();
-        
+            Contact tempC = new Contact();
+
+            tempC.firstname = firstnameTF.getText();
+            tempC.lastname = lastnameTF.getText();
+            tempC.phone = phoneTF.getText();
+            tempC.email = emailTF.getText();
+            tempC.address = addressTA.getText();
+            clear();
+            displayTA.setText("Contact added");
+            clist.add(tempC);
+        } else {
+            Business tempB = new Business();
+
+            tempB.firstname = firstnameTF.getText();
+            tempB.lastname = lastnameTF.getText();
+            tempB.phone = phoneTF.getText();
+            tempB.email = emailTF.getText();
+            tempB.address = addressTA.getText();
+            tempB.company = companyTF.getText();
+            clear();
+            displayTA.setText("Business Contact added");
+            clist.add(tempB);
+
+        }
+
+
     }//GEN-LAST:event_addBTNActionPerformed
 
-    private void clear(){
+    private void clear() {
         firstnameTF.setText("");
         lastnameTF.setText("");
         phoneTF.setText("");
         emailTF.setText("");
         addressTA.setText("");
+        companyTF.setText("");
+        displayTA.setText("");
     }
-    
-    
+
+
     private void exitBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTNActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -236,21 +330,73 @@ public class ABGUI extends javax.swing.JFrame {
 
     private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
         // TODO add your handling code here:
-        if(clist.isEmpty()){
-            displayTA.setText("You've no friends.");
-        }else{
+        if (clist.isEmpty()) {
+            displayTA.setText("You have no contacts.");
+        } else {
             Contact temp;
-            for( int i = 0; i < clist.size(); i++){
+            for (int i = 0; i < clist.size(); i++) {
                 temp = clist.get(i);
-                displayTA.append("\n"+temp.toString());
+                displayTA.append("\n" + temp.toString());
             }
         }
     }//GEN-LAST:event_displayBTNActionPerformed
 
-    private void clearBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBTNActionPerformed
+    private void resetBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBTNActionPerformed
         // TODO add your handling code here:
         clear();
-    }//GEN-LAST:event_clearBTNActionPerformed
+        clist.clear();
+        standardRB.setSelected(true);
+    }//GEN-LAST:event_resetBTNActionPerformed
+
+    private void standardRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standardRBActionPerformed
+        // TODO add your handling code here:
+        compLBL.setVisible(false);
+        companyTF.setVisible(false);
+        clear();
+    }//GEN-LAST:event_standardRBActionPerformed
+
+    private void businessRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_businessRBActionPerformed
+        // TODO add your handling code here:
+        compLBL.setVisible(true);
+        companyTF.setVisible(true);
+        clear();
+    }//GEN-LAST:event_businessRBActionPerformed
+
+    private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
+        // TODO add your handling code here:
+        search();
+    }//GEN-LAST:event_searchBTNActionPerformed
+
+    public void search() {
+        if (clist.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No contacts in system to search");
+        } else {
+
+            String searchterm = JOptionPane.showInputDialog(null, "Enter firstname to search");
+            for (int i = 0; i < clist.size(); i++) {
+                if (clist.get(i).getFirstname().equalsIgnoreCase(searchterm)) {
+                    JOptionPane.showMessageDialog(null, clist.get(i).toString());
+                }
+            }
+        }
+    }
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        // TODO add your handling code here:
+        delete();
+    }//GEN-LAST:event_deleteBTNActionPerformed
+    public void delete() {
+        if (clist.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "no contacts to remove.");
+        } else {
+            String searchterm = JOptionPane.showInputDialog(null, "Enter firstname to search.");
+            for (int i = 0; i < clist.size(); i++) {
+                if (clist.get(i).getFirstname().equalsIgnoreCase(searchterm)) {
+                    clist.remove(i);
+                    JOptionPane.showMessageDialog(null, "Contact has been removed");
+                }
+            }
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -291,7 +437,10 @@ public class ABGUI extends javax.swing.JFrame {
     private javax.swing.JButton addBTN;
     private javax.swing.JLabel addressLBL;
     private javax.swing.JTextArea addressTA;
-    private javax.swing.JButton clearBTN;
+    private javax.swing.JRadioButton businessRB;
+    private javax.swing.JLabel compLBL;
+    private javax.swing.JTextField companyTF;
+    private javax.swing.JButton deleteBTN;
     private javax.swing.JButton displayBTN;
     private javax.swing.JTextArea displayTA;
     private javax.swing.JLabel emailLBL;
@@ -306,5 +455,9 @@ public class ABGUI extends javax.swing.JFrame {
     private javax.swing.JTextField lastnameTF;
     private javax.swing.JLabel phoneLBL;
     private javax.swing.JTextField phoneTF;
+    private javax.swing.JButton resetBTN;
+    private javax.swing.JButton searchBTN;
+    private javax.swing.JRadioButton standardRB;
+    private javax.swing.ButtonGroup typeG;
     // End of variables declaration//GEN-END:variables
 }
